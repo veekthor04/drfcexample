@@ -1,11 +1,15 @@
-# drftest
-django rest framework test
+# drfc-example
+django rest framework example
 
-In this project you have to hide a specific data from anonymous users.
+In this project you have to hide specific data from anonymous/logged out users.
 
-Hide the Price and Maker field to logged out/anonymous users.
+Use the admin to login 
+id: admin
+password: 1234
 
-Below is the example of exposed API:
+Hide the Price and Maker field to logged out/anonymous users only.
+
+Below is the example of API:
 http://127.0.0.1:8000/app/car/
 
 
