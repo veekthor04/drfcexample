@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 from rest_framework_simplejwt.views import TokenObtainPairView,\
     TokenRefreshView
-from rest_framework import generics, viewsets
+from rest_framework import generics, viewsets, permissions
 
 from user.serializers import MyTokenObtainPairSerializer, Userserializer
 
@@ -33,3 +33,16 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = User.objects.all()
     serializer_class = Userserializer
     my_tags = ['Users']
+
+
+class ProfileUserView(generics.RetrieveUpdateDestroyAPIView):
+    """Retives and updates the authenticated user's profile
+    """
+    queryset = User.objects.all()
+    serializer_class = Userserializer
+    permission_classes = (permissions.IsAuthenticated,)
+    my_tags = ["Profile"]
+
+    def get_object(self):
+        """Retrieve authenticated user"""
+        return self.request.user
