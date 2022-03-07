@@ -67,3 +67,24 @@ RESULT: To the anonymous user the api should look like the example beleow:
     }
 ]
 
+
+
+## Usage
+- clone this repository
+ 
+`$ git clone https://github.com/veekthor04/drfcexample.git`
+
+`$ cd drfcexample`
+
+- install dependencies
+
+`$ pip install -r requirements.txt`
+
+- run the app
+
+`$ python manage.py runserver`
+
+## API Documentation
+ReDoc: http://127.0.0.1:8000/redoc/
+
+Swagger-ui: http://127.0.0.1:8000/swagger/
