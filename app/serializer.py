@@ -9,3 +9,11 @@ class CarSerializer(serializers.ModelSerializer):
         fields = '__all__'
         depth = 2
     #   lookup_field = "user_id"
+    
+    
+class AnonymousCarSerializer(serializers.ModelSerializer):
+    """CarSerializer for an Anonymous user that excludes price"""
+    class Meta:
+        model = CarModel
+        exclude = ['price',]
+        depth = 2
